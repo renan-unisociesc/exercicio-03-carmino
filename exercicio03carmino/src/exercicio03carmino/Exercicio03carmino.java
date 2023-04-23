@@ -16,23 +16,23 @@ public class Exercicio03carmino {
      */
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        int divisor = 1;
+        int divisor = 6;
         int quintoMaiorNumero = 1001;
         
-        while (divisor >= 1) {
-            System.out.println("Digite um numero inteiro positivo: ");
+        while (divisor >= 6) {
+            System.out.println("Digite um numero inteiro positivo maior que 5: ");//qualquer numero inteiro que seja 5 ou menos nao entrará, pois vai dar resto 4 ou menos, e procuramos resto 5.
             divisor = entrada.nextInt(); 
-            if (divisor <1){
+            if (divisor <6){
                 System.out.println("voce digitou um numero incorreto");
                 return;
             }
             for (int i=0; i<5; i++) {
-                while ((quintoMaiorNumero % divisor) !=5 ){
+                while ((quintoMaiorNumero % divisor) !=5 ){ //o resultado sempre dará um resultado inteiro entre 0 e 4.
                     quintoMaiorNumero = quintoMaiorNumero + 1;
                 } 
                 quintoMaiorNumero = quintoMaiorNumero + 1;
             }                 
-            System.out.println("O quinto maior numero que 1000, que tem resto 5 na divisao por 11 e: " + (quintoMaiorNumero-1));                   
+            System.out.println("O quinto maior numero que 1000, que tem resto 5 na divisao por " + divisor + " e: " + (quintoMaiorNumero-1));                   
             quintoMaiorNumero = 1001;
         }   
     }
